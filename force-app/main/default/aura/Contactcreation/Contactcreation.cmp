@@ -1,8 +1,0 @@
-<aura:component controller="ContactRecords" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
-    <aura:attribute name="lastname" type="string" default=""/>
-  
-    <lightning:input name="inputname" label="Last Name" value="{!v.lastname}"/><br/>
-        
-    
-    <lightning:button label="save" onclick="{!c.save}" />
-</aura:component>
