@@ -1,0 +1,9 @@
+.THIS .infinite-loading div div a {
+    visibility: hidden;
+}
+.THIS .infinite-loading div div a:after{
+    visibility: visible;
+    left: 0;
+    content: "View All";
+    
+}

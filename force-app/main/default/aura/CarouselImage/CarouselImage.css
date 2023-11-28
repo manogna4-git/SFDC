@@ -1,0 +1,7 @@
+.THIS .slds-carousel_image>img {
+    width: 1000px;
+    height: 150px;
+}
+.THIS .slds-carousel_image {
+    padding-left: 250px;
+}

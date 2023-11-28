@@ -1,0 +1,35 @@
+<template>
+
+<template if:true={isRahulStanding}>
+
+<lightning-card title="Subscriber" icon-name="custom:custom63">
+
+<img src="http://www.clipartbest.com/cliparts/RTG/B6n/RTGB6n5rc.jpg" class=”image” alt="Rahul" />
+
+<div class="slds-p-around_medium">
+
+<p>Waiting for Message</p>
+
+</div>
+
+</lightning-card>
+
+</template>
+
+<template if:true={isMitronMsgReceived}>
+
+<lightning-card title="Subscriber" icon-name="custom:custom63">
+
+<img src="https://1.bp.blogspot.com/-woUVP7TeKz8/UDmegp8mpZI/AAAAAAAACpY/Jwu87lkquzQ/s1600/rahul-ghandhi+copy.jpg" class=”image” alt="Rahul" />
+
+<div class="slds-p-around_medium">
+
+<p>Message Received: {receivedMessage}</p>
+
+</div>
+
+</lightning-card>
+
+</template>
+
+</template>

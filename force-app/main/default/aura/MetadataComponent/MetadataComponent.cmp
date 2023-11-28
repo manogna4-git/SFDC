@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="recordId" type="String" />
+    <force:recordData aura:id="recordLoader"
+                      recordId="{!v.recordId}"
+                      fields="Name,Industry,Phone"
+                      targetFields="{!v.simpleRecord}"
+                      mode="EDIT"
+                      />
+    <aura:iteration items="{!v.simpleRecord}" var="field">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="{!field.name}">{!field.label}</label>
+            <div class="slds-form-element__control">
+                <ui:inputText aura:id="{!field.name}" class="slds-input" value="{!field.value}"  label="{!field.label}"/>
+            </div>
+        </div>
+    </aura:iteration>
+    <lightning:button variant="brand" label="Save" onclick="{!c.handleSave}"/>
+    
+</aura:component>

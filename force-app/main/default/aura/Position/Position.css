@@ -1,0 +1,9 @@
+.THIS .btn{
+    color: var(--lwc-brandTextLink,rgb(1, 118, 211)) !important;
+    border: none;
+    padding-left: 0px !important;
+    background: none!important;
+}
+.THIS .block{
+    margin-bottom :15px;
+}

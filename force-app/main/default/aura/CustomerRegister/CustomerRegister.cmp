@@ -1,0 +1,8 @@
+<aura:component controller ="CustomerRegistration" implements="lightning:actionOverride,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+<aura:attribute name="fields" type="Customer__c" default="['Customer_First_Name__c','Customer_Last_Name__c','Country__c', 'Phone_Number__c', 'Intrested_Product__c', 'Email__c']" />
+  
+<lightning:card title = "customer Registration Form">
+<lightning:recordForm recordId="{!v.recordId}" objectApiName="Customer__c" fields="{!v.fields}" columns="2" 
+                       onsuccess="{!c.handleSubmit}"/>
+</lightning:card>
+</aura:component>

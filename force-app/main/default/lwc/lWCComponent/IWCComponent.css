@@ -1,0 +1,14 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+h1{
+    color: red;
+}
+h6{
+    color: greenyellow;
+}
+p{
+    color: hotpink;
+    font-size: 22px;
+    border-radius: 2px;
+}

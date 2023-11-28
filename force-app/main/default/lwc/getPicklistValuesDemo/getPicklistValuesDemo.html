@@ -1,0 +1,22 @@
+<template>
+    <div class="slds-var-m-around_large">
+
+    
+    <lightning-card icon-name="standard:account" variant="base" title="IndustryPicklistDemo">
+        <div class="slds-var-m-around_large">
+
+    <div if:true={accountindus.data}>
+            <lightning-combobox
+                label="Industry"
+                name="industry"
+                value={selectedIndustry}
+                options={accountindus.data.values}
+                onchange={handleIndustryChange}
+            ></lightning-combobox>
+            <p>selected value is: {selectedIndustry}</p>
+            </div>
+        </div>
+    </lightning-card>
+    </div>
+    
+</template>

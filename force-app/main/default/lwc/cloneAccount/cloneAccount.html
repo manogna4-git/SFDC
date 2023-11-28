@@ -1,0 +1,23 @@
+<template>
+<lightning-quick-action-panel title="">
+    <lightning-card title="Record Form Account Details">
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-record-form
+                    record-id={recordId}
+                    object-api-name="Account"
+                    layout-type="Full"
+                    columns="2"
+                    onsubmit={handleSubmit}
+                    oncancel={closeAction}
+                    mode={formMode}>
+                </lightning-record-form>
+            </lightning-layout-item>
+        </lightning-layout>
+</lightning-card>
+<!--<div slot="footer">
+    <lightning-button variant="neutral" label="Cancel" onclick={closeAction}></lightning-button>
+    <lightning-button variant="brand" label="Save" onclick={closeAction}></lightning-button>
+  </div>-->
+</lightning-quick-action-panel>
+</template>

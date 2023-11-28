@@ -1,0 +1,21 @@
+<apex:page standardController="Customer__c" recordSetVar="Cust">
+    <apex:includeLightning />
+    <div id="Cust" />
+    <script>
+
+ $Lightning.use("c:Customer_RegistrationApp", function() {
+            $Lightning.createComponent(
+                "c:Customer_Registration",
+                {},
+                "Cust",
+                function(cmp) {
+                    console.log("Component is created!");
+                    console.log(cmp);
+                    
+                });
+            });          
+
+
+             
+      </script>
+</apex:page>

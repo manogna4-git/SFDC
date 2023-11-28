@@ -1,0 +1,69 @@
+<aura:component controller ="PostionController" 
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute type="Position__c[]" name="posList"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="sldsClass" type="String" default="slds-size_4-of-12" />
+     <aura:attribute name="title" type="String"  />
+     <aura:attribute name="showInfo" type="Id"  />
+    <aura:attribute name="showInfoPage" type="Boolean" default="false"  />
+    <div class="slds-text-label_Bold" id="focus">
+   <lightning:input type="text" name="searchKey" label="Search" aura:id="searchKey" onchange="{!c.searchKeyChange}" placeholder="Search for more jobs" /><br/>
+   </div>
+      <div  class="slds-grid" >
+           <div class="{!v.sldsClass}">
+                <aura:iteration  items="{!v.posList}" var="pos">
+               
+                        <lightning:card >
+                            <div class="slds-col ">
+                            <p class="pos slds-p-horizontal_small">
+                                
+                                <div class="slds-card__body slds-text-align--left">
+                                    <div class="uiOutputRichText" linkify="true" style="max-width:31%">
+                                        <aura:unescapedHtml value="{!pos.Company__c}"/>
+                                    </div>
+                                </div>
+                                Position Title<br/>
+                                <button data-id ="{!pos.Name}" class="btn" type="button" onclick="{!c.handleClick}" id="{!pos.Id}">{!pos.Name}</button> 
+                               <!-- <a href="{!'/'+ pos.Id }" target="_self">{!pos.Name} </a>-->
+                                <br/><br/>
+                                Location  <br/>
+                                 <a href="{!'https://www.google.com/maps/place/'+ pos.Company_Location__c }" target="_blank">{!pos.Company_Location__c}</a>
+                              <!--  <button aura:id="{!Location__c}" type="button" onclick="{!c.navigate}">{!pos.Location__c}</button>-->
+                                <br/>
+                                
+                            </p>
+                                </div>
+                        </lightning:card> 
+                 <br/>
+            </aura:iteration>            
+           </div>
+        <div class="slds-size_8-of-12" style="padding-left: 1%;">
+                <aura:if isTrue="{!v.showInfoPage}">
+                    
+                    <lightning:card >
+                        <aura:set attribute="actions">
+                               <lightning:button label="Apply"  onclick="{!c.applyJob}"/>
+                        </aura:set>
+                        <aura:set attribute="title">
+                            <lightning:icon iconName="utility:desktop_and_phone" size="small"/>
+                            Positon <br/>
+                            {! v.title }
+                            
+                        </aura:set>
+                        <lightning:recordForm
+                                              recordId="{!v.showInfo}"
+                                              objectApiName="Position__c"
+                                              layoutType="Full"
+                                              columns="1"
+                                              mode="readonly" />
+                    </lightning:card>
+                    <!-- ******* CHILD POP-UP SECTION ******* -->
+                    <div aura:id="showChildModal"> </div>
+                </aura:if>
+                
+          </div>
+       
+           
+    </div>
+    
+</aura:component>
